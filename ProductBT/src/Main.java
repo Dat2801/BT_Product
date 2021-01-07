@@ -8,7 +8,8 @@ public class Main {
         try {
             do {
                 int choice = 0;
-                System.out.println("\n Menu");
+                System.out.println("\n " +
+                        "Menu");
                 System.out.println("1. Thêm sản phẩm");
                 System.out.println("2. Hiển thị sản phẩm");
                 System.out.println("3. TÌm kiếm sản phẩm");
@@ -62,10 +63,19 @@ public class Main {
             System.out.println("Nhập mã sản phẩm");
             String id = scanner.nextLine();
             Product p = productManager.searchProduct(id);
-            System.out.println(p);
+            System.out.printf("\n%-15s%-15s%-15s%-15s"
+                    , "Mã sản phẩm"
+                    , "Tên sản phẩm"
+                    , "Nhà sản xuất"
+                    , "Giá sản phẩm");
+            System.out.printf("\n%-15s%-15s%-15s%-15s"
+                    , p.getIdProduct()
+                    , p.getNameProduct()
+                    , p.getProducer()
+                    , p.getPrice());
+//            System.out.println(p);
         } catch (Exception e) {
-            System.out.println("Nhập sai mời bạn nhập lại"
-            );
+            System.out.println("Nhập sai mời bạn nhập lại");
         }
     }
 }
